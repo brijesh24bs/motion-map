@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionMap | Diagnosis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .result-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .result-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .result-header h1 {
+            color: #F4D35E;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .condition-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .condition-box h2 {
+            color: #162641;
+            margin-bottom: 1rem;
+        }
+        .condition-box p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .exercise-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .exercise {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .exercise:hover {
+            transform: translateY(-5px);
+        }
+        .exercise h3 {
+            color: #F4D35E;
+            margin-bottom: 1rem;
+        }
+        .exercise p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .nav-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .nav-button {
+            padding: 0.8rem 1.5rem;
+            background: #F4D35E;
+            color: #162641;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .nav-button:hover {
+            background: #e1be52;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/icons8-cube-32.png') }}" alt="Logo Icon" class="navbar-icon" />
+            <a href="{{ url_for('home') }}" class="logo">MotionMap</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Exercises</a></li>
+            <li><a href="#" class="btn-nav">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <div class="result-container">
+        <div class="result-header">
+            <h1>Your Diagnosis Result</h1>
+        </div>
+        
+        <div class="condition-box">
+            <h2>Predicted Condition</h2>
+            <p><strong>{{ condition }}</strong></p>
+        </div>
+        
+        <h2 style="color: #162641; margin-bottom: 1.5rem;">Recommended Exercises</h2>
+        <div class="exercise-list">
+            {% if exercises %}
+                {% for exercise in exercises %}
+                    <div class="exercise">
+                        <h3>{{ exercise['exercise'] }}</h3>
+                        <p>{{ exercise['description'] }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="exercise">
+                    <p>No exercises found for this condition.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="nav-buttons">
+            <a href="{{ url_for('app_page') }}" class="nav-button">Try Another Diagnosis</a>
+            <a href="{{ url_for('home') }}" class="nav-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

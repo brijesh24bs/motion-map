@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MotionMap | Let's Get Started</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <style>
+    /* Fade-in effect for header text */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-header {
+      font-size: 3rem;
+      text-align: center;
+      margin: 2rem 0;
+      color: #F4D35E;
+      animation: fadeIn 2s ease-in-out;
+    }
+    /* Styling for the large input box */
+    .symptom-form {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    /* Make the symptom box bigger */
+    .symptom-form input[type="text"] {
+      width: 90%;
+      padding: 1.5rem;        /* Increase padding for a bigger box */
+      font-size: 1.8rem;      /* Increase font size */
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    .symptom-form button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #F4D35E;
+      color: #162641;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .symptom-form button:hover {
+      background-color: #e1be52;
+    }
+
+    /* Ensure the footer is at the bottom */
+    html, body {
+      height: 100%;
+      margin: 0;             /* Remove default margin */
+      padding: 0;            /* Remove default padding */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;  
+    }
+
+    .content {
+      flex: 1;               /* Makes this container grow to fill space */
+    }
+
+    .footer {
+      margin-top: auto;      /* Pushes the footer to the bottom */
+    }
+  </style>
+</head>
+<body>
+  <!-- Original Navbar from Home Page -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="{{ url_for('static', filename='images/icons8-cube-32.png') }}" alt="Logo Icon" class="navbar-icon" />
+      <a href="{{ url_for('home') }}" class="logo">MotionMap</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Exercises</a></li>
+      <li><a href="#" class="btn-nav">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header with fade-in effect -->
+  <header>
+    <h1 class="fade-header">Let's get started!!</h1>
+  </header>
+
+  <!-- Symptom input form -->
+  <section>
+    <div class="symptom-form">
+      <!-- This form posts the input to the Flask backend -->
+      <form action="{{ url_for('diagnose') }}" method="POST">
+        <input type="text" name="symptom" placeholder="Enter your symptoms here..." required>
+        <br>
+        <button type="submit" class="cta-button">Get Diagnosis</button>
+      </form>
+    </div>
+  </section>
+
+   <!-- FOOTER -->
+   <footer class="footer">
+    <div class="footer-left">
+      <p>© 2025 MotionMap, Inc. All rights reserved.</p>
+    </div>
+    <div class="footer-middle">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Exercises</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-resources">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-connect">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="https://www.instagram.com/jeet_kavaiya_25?igsh=MW5xMXFuM3AxcjEwOQ==">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/jeet-kavaiya-8619a5244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

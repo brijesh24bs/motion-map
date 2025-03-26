@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MotionMap | Home</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="{{ url_for('static', filename='images/icons8-cube-32.png') }}" alt="Logo Icon" class="navbar-icon" />
+      <a href="#" class="logo">MotionMap</a>
+      <!-- Removed brand icons -->
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Exercises</a></li>
+      <li><a href="#" class="btn-nav">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Create Your Fitness</h1>
+      <p>
+        Welcome to MotionMap, your personal physiotherapy assistant. 
+        Discover tailored exercises to alleviate your symptoms and achieve your 
+        fitness goals with our easy-to-follow routines.
+      </p>
+      <a href="{{ url_for('app_page') }}" class="cta-button" id="getStartedBtn">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <!-- Replace with your own image -->
+      <img 
+        src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" 
+        alt="Hero Woman" 
+      />
+    </div>
+  </header>
+
+  <!-- EXERCISES SECTION -->
+  <section class="exercises-section">
+    <div class="exercises-image">
+      <!-- Replace with your own image -->
+      <img 
+        src="{{ url_for('static', filename='images/exercise.jpg') }}" 
+        alt="Exercises" 
+      />
+    </div>
+    <div class="exercises-content">
+      <h2>Exercises for You</h2>
+      <p>
+        Explore our extensive library of physiotherapy exercises designed to 
+        target your specific needs. Our experts have curated a wide range of 
+        movements to help you regain strength.
+      </p>
+      <button class="cta-button">Try Now</button>
+    </div>
+  </section>
+
+  <!-- PERSONALIZED PLANS SECTION -->
+  <section class="plans-section">
+    <h2>Personalized Rehabilitation Plans</h2>
+    <p>
+      At MotionMap we understand that every individual's journey to recovery is unique.
+      Our team of experienced physiotherapists will work with you to develop a plan
+      tailored to your needs.
+    </p>
+    <button class="cta-button" id="scheduleBtn">Schedule a Consultation</button>
+
+    <!-- New Row of 4 Treatment Images -->
+    <div class="treatment-images">
+      <div class="treatment-img">
+        <img src="{{ url_for('static', filename='images/Needling.jpg') }}" alt="Needling" />
+        <h4>Needling</h4>
+      </div>
+      <div class="treatment-img">
+        <img src="{{ url_for('static', filename='images/cupping.jpg') }}" alt="Cupping" />
+        <h4>Cupping</h4>
+      </div>
+      <div class="treatment-img">
+        <img src="{{ url_for('static', filename='images/Neck.jpg')}}" alt="Neck Treatment" />
+        <h4>Neck</h4>
+      </div>
+      <div class="treatment-img">
+        <img src="{{url_for('static', filename='images/Shoulder.jpg')}}" alt="Shoulder Treatment" />
+        <h4>Shoulder</h4>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- OVERCOME INJURIES SECTION -->
+  <section class="injuries-section">
+    <div class="injuries-content">
+      <h2>Overcome Injuries with MotionMap</h2>
+      <p>
+        Whether you're recovering from a sports injury, chronic pain, or a recent accident, 
+        MotionMap is here to guide you every step of the way. Our app provides personalized 
+        exercise routines, progress tracking, and virtual consultations with our team of 
+        licensed physiotherapists to ensure you achieve your rehabilitation goals.
+      </p>
+      <button class="cta-button">Get Started</button>
+    </div>
+    <div class="injuries-image">
+      <!-- Replace with your own image -->
+      <img 
+        src="https://images.pexels.com/photos/247287/pexels-photo-247287.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" 
+        alt="Injuries" 
+      />
+    </div>
+  </section>
+
+  <!-- EMPOWER SECTION -->
+  <section class="empower-section">
+    <h2>Empower Your Fitness Journey with MotionMap</h2>
+    <p>
+      MotionMap is more than just an app - it's a comprehensive platform that combines 
+      the expertise of licensed physiotherapists with the convenience of digital tools. 
+      Discover a world of tailored exercises, real-time progress tracking, and more.
+    </p>
+    <button class="cta-button">Explore Now</button>
+
+    <div class="empower-images">
+      <!-- Replace these images with your own -->
+      <div class="empower-img">
+        <img 
+          src="{{url_for('static', filename='images/pexels-olly-868483.jpg')}}" 
+          alt="Empower 1" 
+        />
+      </div>
+      <div class="empower-img">
+        <img 
+          src="{{url_for('static', filename='images/pexels-olly-3799312.jpg')}}" 
+          alt="Empower 2" 
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- UNLOCK SECTION -->
+  <section class="unlock-section">
+    <h2>Unlock Your Potential</h2>
+    <div class="unlock-features">
+      <div class="feature-card">
+        <div class="feature-icon">🏃‍♂️</div>
+        <h3>Exercises</h3>
+        <p>
+          Personalized exercises and stretching routines designed to address your 
+          specific needs and help you reach your fitness goals.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h3>Virtual Consult</h3>
+        <p>
+          Connect with our licensed physiotherapists for personalized guidance and 
+          support throughout your rehabilitation journey.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Track Progress</h3>
+        <p>
+          Monitor your progress, adjust your plan, and stay motivated with our 
+          intuitive tracking tools.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <p>Find the answers you need to make the most of your MotionMap experience</p>
+    <button class="cta-button" id="faqBtn">Browse FAQs</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <p>© 2025 MotionMap, Inc. All rights reserved.</p>
+    </div>
+    <div class="footer-middle">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="ai-exercises.html">Exercises</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-resources">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="FAQ.html">FAQs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-connect">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="https://www.instagram.com/jeet_kavaiya_25?igsh=MW5xMXFuM3AxcjEwOQ==">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/jeet-kavaiya-8619a5244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

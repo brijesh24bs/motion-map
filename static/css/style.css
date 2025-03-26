@@ -1,0 +1,640 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Increased base font size */
+    font-size: 18px;
+    background-color: #0B1E2D; /* Dark navy background */
+    color: #FFFFFF;
+  }
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    /* Base adjustments */
+    body {
+      font-size: 16px;
+    }
+  
+    /* Navigation */
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 2rem;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  
+    /* Hero Section */
+    .hero-section {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+    
+    .hero-content, .hero-image {
+      flex: 1 1 100%;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    /* Exercises Section */
+    .exercises-section {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+    }
+    
+    /* Plans, Injuries, Empower, Unlock, and FAQ Sections */
+    .plans-section,
+    .injuries-section,
+    .empower-section,
+    .unlock-section,
+    .faq-section {
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    /* Treatment Images */
+    .treatment-images {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .treatment-img {
+      max-width: 100%;
+    }
+    
+    /* Empower Images */
+    .empower-images {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .empower-img {
+      max-width: 100%;
+    }
+  }
+  
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply animation to elements */
+  .hero-section h1 {
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+  
+  .hero-section p {
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  .cta-button {
+    animation: fadeIn 1.8s ease-in-out forwards;
+  }
+  
+  .empower-images img {
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #162641;
+    /* Increased padding to make nav bar bigger */
+    padding: 2rem 4rem; 
+  }
+
+  .navbar-icon {
+    width: 40px;      /* Adjust icon width as needed */
+    height: auto;     /* Keeps aspect ratio */
+    margin-right: 1rem;
+    filter: brightness(0) invert(1);
+    /* Optional: vertical-align, if needed, to align with text */
+    vertical-align: middle;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    /* Increased font size for the logo */
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* increased gap between links */
+  }
+  
+  .nav-links li a {
+    /* Increased font size for nav links */
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #F4D35E;
+  }
+  
+  .btn-nav {
+    background-color: #F4D35E;
+    color: #162641;
+    padding: 0.8rem 1.2rem; /* slightly larger button padding */
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* HERO SECTION */
+  .hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .hero-content {
+    flex: 1 1 500px;
+  }
+  
+  .hero-content h1 {
+    /* Increased heading size */
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #F4D35E;
+  }
+  
+  .hero-content p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    font-size: 1.5rem;
+  }
+  
+  .cta-button {
+    background-color: #F4D35E;
+    color: #162641;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.25rem;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #e1be52;
+  }
+
+  .btn-nav:hover {
+    background-color: #0000;
+  }
+  
+  .hero-image {
+    flex: 1.5 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image img {
+    max-width: 110%;
+    border-radius: 6px;
+  }
+  
+  /* EXERCISES SECTION */
+  .exercises-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    /* Remove or reduce default padding to push image further left */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .exercises-image {
+    /* Make the image container take more space (e.g., 2 parts vs. 1 part) */
+    flex: 1.5;  
+  }
+  
+  .exercises-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+  
+  .exercises-content {
+    /* The content container takes less space */
+    flex: 1;
+  }
+  
+  .exercises-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #F4D35E;
+  }
+  
+  .exercises-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* PLANS SECTION */
+  /* Make the entire section bigger, with larger fonts */
+.plans-section {
+    padding: 3rem;            /* Increased padding */
+    text-align: center;
+  }
+  
+  .plans-section h2 {
+    font-size: 3.5rem;          /* Larger heading */
+    color: #F4D35E;
+    margin-bottom: 1rem;
+  }
+  
+  .plans-section p {
+    max-width: 800px;
+    margin: 0.5rem auto 2rem;
+    line-height: 1.6;
+    font-size: 1.5rem;       /* Larger paragraph font */
+  }
+  
+  .plans-section .cta-button {
+    font-size: 1.25rem;       /* Larger button text */
+    padding: 1rem 2rem;       /* Bigger button padding */
+    margin-bottom: 2rem; 
+  }
+  
+  /* New Row of 4 Treatment Images */
+ /* New Row of 4 Treatment Images */
+.treatment-images {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures a single row */
+    justify-content: space-around; /* Equal horizontal spacing */
+    align-items: center;
+    margin-top: 3rem;
+  }
+  
+  .treatment-img {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+  
+  .treatment-img img {
+    width: 100%;
+    max-width: 300px; /* Increase max-width to make images larger */
+    border-radius: 6px;
+  }
+  
+  .treatment-img h4 {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: #F4D35E;
+  }  
+  
+  /* INJURIES SECTION */
+  .injuries-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .injuries-content,
+  .injuries-image {
+    flex: 1 1 400px;
+  }
+  
+  .injuries-content h2 {
+    font-size: 3.5rem;
+    color: #F4D35E;
+    margin-bottom: 1rem;
+  }
+  
+  .injuries-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .injuries-image img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  
+  /* EMPOWER SECTION */
+  .empower-section {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .empower-section .cta-button {
+    margin-bottom: 2rem; /* Adds extra space below the button */
+  }  
+
+  .empower-section h2 {
+    font-size: 3.5rem;
+    color: #F4D35E;
+    margin-bottom: 1rem;
+  }
+  
+  .empower-section p {
+    max-width: 800px;
+    margin: 0.5rem auto 2rem;
+    line-height: 1.6;
+    font-size: 1.3rem;
+  }
+  
+  .empower-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Spacing between images */
+    margin-top: 1rem; /* Optional: add some space above images if desired */
+  }
+  
+  .empower-img {
+    max-width: 700px; /* Increase the max-width to make images larger */
+    text-align: center;
+  }
+  
+  .empower-img img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  
+  .empower-img h4 {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #F4D35E;
+  }
+  
+  /* UNLOCK SECTION */
+  .unlock-section {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .unlock-section h2 {
+    font-size: 3.5rem;
+    color: #F4D35E;
+    margin-bottom: 1.5rem;
+  }
+  
+  .unlock-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    max-width: 400px;
+    height: 300px;
+    background-color: #13253A;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #F4D35E;
+  }
+  
+  .feature-card p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  
+  /* FAQ SECTION */
+  .faq-section {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .faq-section h2 {
+    font-size: 3.5rem;
+    color: #F4D35E;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.3rem;
+  }
+  
+  /* FOOTER */
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #162641;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .footer > div {
+    flex: 1 1 200px;
+    margin: 0.5rem;
+  }
+  
+  .footer-left p {
+    color: #aaa;
+    font-size: 1.25rem;
+  }
+  
+  .footer h4 {
+    margin-bottom: 0.5rem;
+    color: #F4D35E;
+    font-size: 1.3rem;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer li {
+    margin-bottom: 0.3rem;
+  }
+  
+  .footer a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    font-size: 1.05rem;
+  }
+  
+  .footer a:hover {
+    color: #F4D35E;
+  }
+  
+  /* CODE SECTION (app.html) */
+  .code-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
+    background-color: #13253A;
+    border-radius: 6px;
+  }
+  
+  .code-section h2 {
+    color: #F4D35E;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .code-section p {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+  }
+  
+  pre {
+    background-color: #0B1E2D;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 4px;
+  }
+  
+  code {
+    color: #9CDCFE;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    line-height: 1.4;
+    font-size: 1rem;
+  }
+
+  /* AI Exercises Section Overrides */
+  .ai-exercises-container {
+    text-align: center; /* Center the heading and text */
+  }
+
+  .ai-exercises-container h1 {
+    font-size: 3rem;
+    color: #F4D35E;
+    margin-bottom: 1rem;
+  }
+
+  .ai-exercises-container p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .ai-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 2rem; /* spacing between rows and columns */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* left-align labels/inputs */
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-field label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-field input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  /* Make the button row span both columns and center the button */
+  .full-width {
+    grid-column: span 2; /* spans both columns in the grid */
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .full-width button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  /* Plan Output Styles */
+  .plan-output {
+    margin-top: 2rem;
+    text-align: left; 
+  }
+
+  .plan-output h2 {
+    font-size: 1.8rem;
+    color: #F4D35E;
+    margin-bottom: 1rem;
+  }
+
+  .week-plan {
+    margin-bottom: 1rem;
+  }
+
+  .week-plan h4 {
+    font-size: 1.2rem;
+    color: #F4D35E;
+    margin-bottom: 0.5rem;
+  }
+
+  .week-plan ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+  }
